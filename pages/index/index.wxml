@@ -1,0 +1,84 @@
+<!-- 活动信息 -->
+<van-cell-group inset custom-class="mt-10">
+    <van-field readonly is-link label="活动时间" title-width="20%" size="large" input-align="right" value="{{ activity.time }}" placeholder="请选择活动时间" catch:tap="showTimePopup" />
+    <!-- <van-field label="活动日期" size="large" input-align="right" value="2024/08/10" placeholder="请选择活动时间" /> -->
+    <!-- <van-field label="活动时间" size="large" input-align="right" value="20:00-22:00" placeholder="请选择活动时间" /> -->
+    <van-field required label="参与人数" size="large" input-align="right" type="number" value="{{ activity.people }}" placeholder="请输入人数" data-type="people" bind:change="getInputValue">
+        <text slot="button" class="col-black">人</text>
+    </van-field>
+</van-cell-group>
+<!-- 活动信息 // -->
+
+<!-- 场地信息 -->
+<van-cell-group inset custom-class="mt-10">
+    <van-field readonly is-link label="活动场地" size="large" input-align="right" value="{{ site.name }}" placeholder="请选择活动场地" catch:tap="chooseLocation" />
+    <van-field required label="场馆费用" size="large" input-align="right" value="{{ site.price }}" placeholder="0.00" type="digit" data-type="site" bind:change="getInputValue">
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+    <van-field readonly label="费用人均" size="large" input-align="right" value="{{ site.averagePrice }}" placeholder="0.00">
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+</van-cell-group>
+<!-- 场地信息 // -->
+
+<!-- 用球信息 -->
+<van-cell-group inset custom-class="mt-10">
+    <van-field label="用球品牌" size="large" input-align="right" value="{{ ball.brand }}" placeholder="请输入羽毛球品牌" bind:change="onChange" />
+    <van-field required title-width="70%" size="large" input-align="right" value="{{ ball.unitPrice }}" placeholder="0" type="digit" data-type="ballUnitPrice" bind:change="getInputValue">
+        <view slot="label" class="flex-sc" style="color: #646566;" catch:tap="selectBallPriceType">
+            <text class="mr-5">购买价格（{{ball.priceType==0?'桶「12个」':'个'}})</text>
+            <van-icon name="arrow-down" />
+        </view>
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+    <van-field required label="用球数量" size="large" input-align="right" value="{{ ball.num }}" placeholder="0" type="number" data-type="ballNum" bind:change="getInputValue">
+        <text slot="button" class="col-black">个</text>
+    </van-field>
+    <van-field readonly label="用球总价" size="large" input-align="right" value="{{ ball.totalPrice }}" placeholder="0.00">
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+    <van-field readonly label="费用人均" size="large" input-align="right" value="{{ ball.averagePrice }}" placeholder="0.00">
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+</van-cell-group>
+<!-- 用球信息 // -->
+
+
+<van-cell-group inset custom-class="mt-10">
+    <van-field readonly label="总金额" size="large" input-align="right" type="number" value="{{ amount.price }}" placeholder="0.00">
+        <text slot="button" class="col-black">元</text>
+    </van-field>
+</van-cell-group>
+
+<view class="txt-c col-999 font-16" style="margin-top: 60rpx;">
+    <text>人均金额</text>
+    <text wx:if="{{site.averagePrice&&ball.averagePrice}}">（{{site.averagePrice}}+{{ball.averagePrice}}）</text>
+
+</view>
+<view class="mt-10 font-bold flex flex-x-center">
+    <text class="font-30">¥</text>
+    <text class="ml-10 font-36">{{ amount.averagePrice }}</text>
+</view>
+
+<van-popup show="{{ showTimePopup }}" round position="bottom" bind:close="hideTimePopup">
+    <van-nav-bar title="活动时间" safe-area-inset-top="{{ false }}">
+        <van-icon slot="right" name="cross" size="20" catchtap="hideTimePopup" />
+    </van-nav-bar>
+    <van-tabs animated custom-class="tabs border-t border-b">
+        <van-tab title="日期">
+            <van-datetime-picker show-toolbar="{{ false }}" visible-item-count="4" type="date" value="{{ dateConfig.currentDate }}" formatter="{{ formatter }}" min-date="{{ dateConfig.minDate }}" max-date="{{ dateConfig.maxDate }}" data-filter-type="yyyy-MM-dd" data-type="date" bind:input="onTimeInput" />
+        </van-tab>
+        <van-tab title="开始时间">
+            <van-datetime-picker show-toolbar="{{ false }}" visible-item-count="4" type="time" value="{{ timeConfig.currentDate }}" formatter="{{ formatter }}" min-hour="{{ timeConfig.minHour }}" max-hour="{{ timeConfig.maxHour }}" min-minute="{{ timeConfig.minMinute }}" max-minute="{{ timeConfig.maxMinute }}" filter="{{ filter }}" data-filter-type="HH:mm" data-type="sTime" bind:input="onTimeInput" />
+        </van-tab>
+        <van-tab title="结束时间">
+            <van-datetime-picker show-toolbar="{{ false }}" visible-item-count="4" type="time" value="{{ timeConfig.currentDate }}" formatter="{{ formatter }}" min-hour="{{ timeConfig.minHour }}" max-hour="{{ timeConfig.maxHour }}" min-minute="{{ timeConfig.minMinute }}" max-minute="{{ timeConfig.maxMinute }}" filter="{{ filter }}" data-filter-type="HH:mm" data-type="eTime" bind:input="onTimeInput" />
+        </van-tab>
+    </van-tabs>
+    <van-field readonly label="活动日期" size="large" input-align="right" placeholder="请选择活动日期" value="{{ activity.date }}" />
+    <van-field readonly label="活动时间" size="large" input-align="right" placeholder="请选择活动时间" value="{{ activity.sTime }} - {{ activity.eTime }}" />
+    <view class="flex-ac pd-20">
+        <van-button custom-style="width:240rpx;" catch:tap="hideTimePopup">取消</van-button>
+        <van-button custom-style="width:240rpx;" catch:tap="confirmTime" type="primary">确认</van-button>
+    </view>
+</van-popup>

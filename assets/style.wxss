@@ -1,0 +1,152 @@
+page{font-size: 28rpx;background: #fff;box-sizing: border-box;}
+view,input{box-sizing: border-box;}
+view,navigator{box-sizing: border-box;position: relative}
+image{max-width: 100%;max-height: 100%;display: block;}
+.block{display: block !important;}
+.inline-block{display: inline-block !important;}
+.overflow-auto{overflow: auto;}
+.overflow-hidden{overflow: hidden;}
+.flex{display: flex;}
+.flex-end{justify-content: flex-end;} 
+.flex-wrap{flex-wrap: wrap;}
+.flex-nowrap{flex-wrap: nowrap;overflow: scroll;}
+.flex-column{flex-direction: column;}
+.flex-row{flex-direction: row !important;}
+.flex-ac{display: flex;justify-content: space-around;align-items: center;}
+.flex-bc{display: flex;justify-content: space-between;align-items: center;}
+.flex-cc{display: flex;justify-content: center;align-items: center;}
+.flex-sc{display: flex;justify-content: flex-start;align-items: center;}
+.flex-ec{display: flex;justify-content: flex-end;align-items: center;}
+.flex-none{flex: none;}
+.flex-auto{flex: auto;}
+.flex-aligncenter{display: flex;align-items: center;}
+.flex-shrink{flex-shrink:0;}
+.flex-x-start{justify-content: flex-start;}
+.flex-x-between{justify-content: space-between;}
+.flex-x-center{justify-content: center;}
+.flex-x-around{justify-content: space-around;}
+.flex-x-end{justify-content: flex-end;}
+.flex-y-start{align-items: flex-start !important;}
+.flex-y-center{align-items: center;}
+.flex-y-end{align-items: flex-end;}
+.col-999{color: #999 !important;}
+.col-666{color: #666 !important;}
+.col-333{color: #333 !important;}
+.col-red{color: #fd4141 !important;}
+.col-blue{color: #0ebae5 !important;}
+.col-green{color: #3bac8b !important;}
+.col-white{color: #FFF !important;}
+.col-black{color: #000 !important;}
+.col-orange{color: #fc670c !important;}
+.font-10{font-size: 20rpx !important;}
+.font-12{font-size: 24rpx !important;}
+.font-14{font-size: 28rpx !important;}
+.font-16{font-size: 32rpx !important;}
+.font-18{font-size: 36rpx !important;}
+.font-20{font-size: 40rpx !important;}
+.font-22{font-size: 44rpx !important;}
+.font-24{font-size: 48rpx !important;}
+.font-26{font-size: 52rpx !important;}
+.font-28{font-size: 56rpx !important;}
+.font-30{font-size: 60rpx !important;}
+.font-32{font-size: 64rpx !important;}
+.font-34{font-size: 68rpx !important;}
+.font-36{font-size: 72rpx !important;}
+.font-bold{font-weight: bold !important;}
+.mt-0{margin-top: 0rpx !important}
+.mt-5{margin-top: 10rpx !important}
+.mt-10{margin-top: 20rpx !important}
+.mt-15{margin-top: 30rpx !important}
+.mt-20{margin-top: 40rpx !important}
+.mb-0{margin-bottom: 0rpx !important}
+.mb-5{margin-bottom: 10rpx !important}
+.mb-10{margin-bottom: 20rpx !important}
+.mb-15{margin-bottom: 30rpx !important}
+.mb-20{margin-bottom: 40rpx !important}
+.ml-0{margin-left: 0rpx !important}
+.ml-5{margin-left: 10rpx !important}
+.ml-10{margin-left: 20rpx !important}
+.ml-15{margin-left: 30rpx !important}
+.ml-20{margin-left: 40rpx !important}
+.mr-0{margin-right: 0rpx !important}
+.mr-5{margin-right: 10rpx !important}
+.mr-10{margin-right: 20rpx !important}
+.mr-15{margin-right: 30rpx !important}
+.mr-20{margin-right: 40rpx !important}
+.pt-0{padding-top: 0rpx !important}
+.pt-5{padding-top: 10rpx !important}
+.pt-10{padding-top: 20rpx !important}
+.pt-15{padding-top: 30rpx !important}
+.pt-20{padding-top: 40rpx !important}
+.pb-0{padding-bottom: 0rpx !important}
+.pb-5{padding-bottom: 10rpx !important}
+.pb-10{padding-bottom: 20rpx !important}
+.pb-15{padding-bottom: 30rpx !important}
+.pb-20{padding-bottom: 40rpx !important}
+.pl-0{padding-left: 0rpx !important}
+.pl-5{padding-left: 10rpx !important}
+.pl-10{padding-left: 20rpx !important}
+.pl-15{padding-left: 30rpx !important}
+.pl-20{padding-left: 40rpx !important}
+.pr-0{padding-right: 0rpx !important}
+.pr-5{padding-right: 10rpx !important}
+.pr-10{padding-right: 20rpx !important}
+.pr-15{padding-right: 30rpx !important}
+.pr-20{padding-right: 40rpx !important}
+.plr-10{padding: 0 20rpx;}
+.mg-5{margin: 10rpx !important;}
+.mg-10{margin: 20rpx !important;}
+.mg-15{margin: 30rpx !important;}
+.mg-20{margin: 40rpx !important;}
+.pd-5{padding: 10rpx !important;}
+.pd-10{padding: 20rpx !important;}
+.pd-15{padding: 30rpx !important;}
+.pd-20{padding: 40rpx !important;}
+.mg-0{margin: 0 !important;}
+.pd-0{padding: 0 !important;}
+.txt-l{text-align: left !important}
+.txt-c{text-align: center !important}
+.txt-r{text-align: right !important}
+.txt-ell{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.txt-ell-2{text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;line-clamp: 2;-webkit-box-orient: vertical;}
+.txt-ell-3{text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;line-clamp: 3;-webkit-box-orient: vertical;}
+.txt-del{text-decoration:line-through}
+.border-n{border: none !important;}
+.border-all{border: 2rpx solid #f3f3f3;}
+.border-t{border-top: 2rpx solid #f3f3f3;}
+.border-l{border-left: 2rpx solid #f3f3f3;}
+.border-r{border-right: 2rpx solid #f3f3f3;}
+.border-b{border-bottom: 2rpx solid #f3f3f3;}
+.bg-white{background-color: #fff;}
+.bg-black{background-color: #000;}
+.bg-transparent{background-color: transparent;}
+.bg-gray{background-color: gray;}
+.bg-red{background-color: #fd4141;}
+.bg-f3f3f3{background-color: #f3f3f3 !important;}
+.radius-6{border-radius: 6rpx !important;}
+.radius-10{border-radius: 10rpx !important;}
+.radius-20{border-radius: 20rpx !important;}
+.radius-50{border-radius: 50rpx !important;}
+.icon_logo{width: 30rpx;height: 30rpx;vertical-align: middle;display: inline-block;}
+.safe-bottom{padding-bottom: env(safe-area-inset-bottom);}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+/* @font-face {
+    font-family: "得意黑 斜体";
+    font-weight: 400;
+    src: url("//at.alicdn.com/wf/webfont/wQBlZKSQWFjy/Fwuaur2smKYw.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/wQBlZKSQWFjy/zZht02dvMlNe.woff") format("woff");
+    font-display: swap;
+} */
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: "得意黑 斜体";font-weight: 400;
+    src: url("//at.alicdn.com/wf/webfont/wQBlZKSQWFjy/MyYhjScjeFx5.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/wQBlZKSQWFjy/qwydCkJcHcoL.woff") format("woff");
+    font-display: swap;
+  }
+
+.deyiti-text {
+    font-family: '得意黑 斜体', sans-serif;
+}
