@@ -3,11 +3,13 @@ Page({
     data: {
         dateConfig: { // 年月日配置项
             currentDate: new Date().getTime(),
-            minDate: new Date(new Date().getFullYear() - 1, 11, 1).getTime(),
-            maxDate: new Date(new Date().getFullYear() + 1, 0, 31).getTime(),
+            // minDate: new Date(new Date().getFullYear() - 1, 11, 1).getTime(),
+            // maxDate: new Date(new Date().getFullYear() + 1, 0, 31).getTime(),
+            minDate: new Date().getTime() - 24 * 60 * 60 * 1000 * 14,
+            maxDate: new Date().getTime() + 24 * 60 * 60 * 1000 * 14,
         },
         timeConfig: { // 时分配置项
-            minHour: 9,
+            minHour: 0,
             maxHour: 23,
             minMinute: 0,
             maxMinute: 59,
@@ -105,17 +107,21 @@ Page({
     getInputValue(e) {
         const type = e.currentTarget.dataset.type
         const detail = e.detail
+        console.log(detail);
         if (type == 'people') {
             this.setData({ 'activity.people': detail })
         }
         if (type == 'site') {
             this.setData({ 'site.price': detail })
+            !detail && this.setData({ 'site.averagePrice': '' })
         }
         if (type == 'ballNum') {
             this.setData({ 'ball.num': detail })
+            !detail && this.setData({ 'ball.totalPrice': '', 'ball.averagePrice': '' })
         }
         if (type == 'ballUnitPrice') {
             this.setData({ 'ball.unitPrice': detail })
+            !detail && this.setData({ 'ball.totalPrice': '', 'ball.averagePrice': '' })
         }
         this.countPrice()
     },

@@ -1,8 +1,8 @@
 <!-- 活动信息 -->
 <van-cell-group inset custom-class="mt-10">
-    <van-field readonly is-link label="活动时间" title-width="20%" size="large" input-align="right" value="{{ activity.time }}" placeholder="请选择活动时间" catch:tap="showTimePopup" />
-    <!-- <van-field label="活动日期" size="large" input-align="right" value="2024/08/10" placeholder="请选择活动时间" /> -->
-    <!-- <van-field label="活动时间" size="large" input-align="right" value="20:00-22:00" placeholder="请选择活动时间" /> -->
+    <van-field readonly is-link label="活动时间" size="large" input-align="right" placeholder="请选择活动时间" title-width="20%" value="{{ activity.time }}" catch:tap="showTimePopup" />
+    <!-- <van-field readonly is-link label="活动日期" size="large" input-align="right" placeholder="请选择活动日期" value="2024/08/10" catch:tap="showTimePopup" /> -->
+    <!-- <van-field readonly is-link label="活动时间" size="large" input-align="right" placeholder="请选择活动时间" value="20:00-22:00" catch:tap="showTimePopup" /> -->
     <van-field required label="参与人数" size="large" input-align="right" type="number" value="{{ activity.people }}" placeholder="请输入人数" data-type="people" bind:change="getInputValue">
         <text slot="button" class="col-black">人</text>
     </van-field>
