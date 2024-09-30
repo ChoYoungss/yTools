@@ -61,7 +61,7 @@ Page({
         const today = this.formatTime(new Date().getTime(), 'yyyy-MM-dd')
         this.setData({
             'activity.date': today,
-            'activity.time': `${today}  20:00-22:00`
+            'activity.time': `${today}  20:00 - 22:00`
         })
     },
 
@@ -107,7 +107,6 @@ Page({
     getInputValue(e) {
         const type = e.currentTarget.dataset.type
         const detail = e.detail
-        console.log(detail);
         if (type == 'people') {
             this.setData({ 'activity.people': detail })
         }
@@ -151,7 +150,7 @@ Page({
     },
 
     async selectBallPriceType() {
-        const res = await wx.showActionSheet({ itemList: ['桶（12个）', '个'] }).fail()
+        const res = await wx.showActionSheet({ itemList: ['桶（12个）', '个'] })
         this.setData({ 'ball.priceType': res.tapIndex })
         this.countPrice()
     },
